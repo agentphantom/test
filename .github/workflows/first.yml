@@ -16,7 +16,8 @@ jobs:
         python-version: '3.8' 
         architecture: 'x64' 
     - run: |
-          python myscript.py
+          pip install -r requirements.txt
+          python script.py
           git config --global user.email "phantom@phantom.im"
           git config --global user.name "Phantom"
           git add .
