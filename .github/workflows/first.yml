@@ -15,7 +15,11 @@ jobs:
       with:
         python-version: '3.8' 
         architecture: 'x64' 
-    - run: ls
-    - run: python myscript.py
+    - run: |
+          python myscript.py
+          ls
+          git add .
+          git commit -m "generated"
+          git push
 
 
