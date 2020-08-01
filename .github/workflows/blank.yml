@@ -15,6 +15,7 @@ jobs:
       with:
         python-version: '3.8' 
         architecture: 'x64' 
-      run: python myscript.py
+    - run: ls
+    - run: python myscript.py
 
 
