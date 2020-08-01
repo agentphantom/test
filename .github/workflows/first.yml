@@ -17,7 +17,6 @@ jobs:
         architecture: 'x64' 
     - run: |
           python myscript.py
-          ls
           git config --global user.email "phantom@phantom.im"
           git config --global user.name "Phantom"
           git add .
