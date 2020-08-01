@@ -21,7 +21,7 @@ jobs:
           git config --global user.email "phantom@phantom.im"
           git config --global user.name "Phantom"
           git add .
-          git commit -m "Generated random file"
+          git commit -m "Generated CSV file"
           git push
 
 
