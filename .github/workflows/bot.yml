@@ -15,14 +15,15 @@ jobs:
 
     # These steps are run in the same order as are defined.
     steps:
-      # Export our WEBHOOK secret to an environment variable.
-      - name: Retrieving Secrets
-        env:
-          WEBHOOK: ${{ secrets.WEBHOOK }}
-
       # actions checkout and python are pre-built actions
       # that abstract commonly used tasks.
       - uses: actions/checkout@v2
+
+      # Export our WEBHOOK secret to an environment variable.
+      - name: Retrieving Secrets
+        run: echo "Secrets loaded."
+        env:
+          WEBHOOK: ${{ secrets.WEBHOOK }}
 
       # The python action will set us a Python 3.8 (64-bit) instance.
       - name: Setting up Python
