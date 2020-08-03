@@ -9,25 +9,23 @@ on:
 # 'jobs' are the routines, we only have
 # one when the instance is built.
 jobs:
-  
   build:
     # Our instance will use the latest available version of Ubuntu.
     runs-on: ubuntu-latest
 
     # These steps are run in the same order as are defined.
     steps:
+      # actions checkout and python are pre-built actions
+      # that abstract commonly used tasks.
+      - uses: actions/checkout@v2
 
-    # actions checkout and python are pre-built actions
-    # that abstract commonly used tasks.
-    - uses: actions/checkout@v2
-    
-    # The python action will set us a Python 3.8 (64-bit) instance.
-    - uses: actions/setup-python@v2
-      with:
-        python-version: '3.8' 
-        architecture: 'x64' 
-    
-    # Use PIP to install the dependencies and then run the script.
-    - run: |
+      # The python action will set us a Python 3.8 (64-bit) instance.
+      - uses: actions/setup-python@v2
+        with:
+          python-version: "3.8"
+          architecture: "x64"
+
+      # Use PIP to install the dependencies and then run the script.
+      - run: |
           pip install -r requirements.txt
           python script_remote.py
