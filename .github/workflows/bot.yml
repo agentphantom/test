@@ -18,19 +18,21 @@ jobs:
       # Export our WEBHOOK secret to an environment variable.
       - name: Retrieving Secrets
         env:
-          WEBHOOK: ${{ secrets.webhook }}
+          WEBHOOK: ${{ secrets.WEBHOOK }}
 
       # actions checkout and python are pre-built actions
       # that abstract commonly used tasks.
       - uses: actions/checkout@v2
 
       # The python action will set us a Python 3.8 (64-bit) instance.
-      - uses: actions/setup-python@v2
+      - name: Setting up Python
+        uses: actions/setup-python@v2
         with:
           python-version: "3.8"
           architecture: "x64"
 
       # Use PIP to install the dependencies and then run the script.
-      - run: |
+      - name: Running Script
+        run: |
           pip install -r requirements.txt
           python script_remote.py
