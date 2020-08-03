@@ -21,7 +21,7 @@ jobs:
 
       # Export our WEBHOOK secret to an environment variable.
       - name: Retrieving Secrets
-        run: echo "Secrets loaded."
+        run: echo $WEBHOOK
         env:
           WEBHOOK: ${{ secrets.WEBHOOK }}
 
