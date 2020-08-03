@@ -1,8 +1,8 @@
 name: Script Tester
 
-on:
-  schedule:
-    - cron: "*/10 * * * *"
+#on:
+#  schedule:
+#    - cron: "*/10 * * * *"
 
 jobs:
   
